@@ -1,0 +1,7 @@
+#!/bin/bash
+width=$(tmux display-message -p '#{window_width}')
+if [ "$width" -gt 100 ]; then
+  echo "#[fg=colour244] #I:#W "
+else
+  echo ""
+fi

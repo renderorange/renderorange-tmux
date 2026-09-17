@@ -1,0 +1,10 @@
+#!/bin/bash
+width=$(tmux display-message -p '#{window_width}')
+if [ "$width" -gt 100 ]; then
+  load=$(tmux-load)
+  mem=$(tmux-mem)
+  dt=$(date '+%a %b %d %I:%M %p')
+  echo "#[fg=colour245]${load}  #[fg=colour240]${mem}  #[fg=colour240]${dt}   "
+else
+  echo "#[fg=colour236] #I:#W  "
+fi
