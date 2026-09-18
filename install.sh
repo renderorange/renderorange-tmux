@@ -36,7 +36,7 @@ link() {
     fi
   fi
 
-  ln -sf "$src" "$dst"
+  ln -sfn "$src" "$dst"
 }
 
 # --- existing tmux.conf ---
@@ -66,7 +66,7 @@ if [ -e "$TMUX_CONF" ] || [ -L "$TMUX_CONF" ]; then
       ;;
   esac
 else
-  ln -sf "$REPO_DIR/tmux.conf" "$TMUX_CONF"
+  ln -sfn "$REPO_DIR/tmux.conf" "$TMUX_CONF"
   echo "Installed tmux.conf"
 fi
 
